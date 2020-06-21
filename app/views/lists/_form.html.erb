@@ -1,4 +1,13 @@
 <%= form_with(model: @list, local: true) do |form| %>
+    <% if @list.errors.any? %>
+        <div id="error_explanation">
+            <div class="alert alert-danger" role="alert">
+                <% @list.errors.full_messages.each do |message| %>
+                    <%= message %><br>
+                 <% end %>
+            </div>
+        </div>
+    <% end %>
     <div class="form-group">
         <%= form.label :title %><br>
         <%= form.text_field :title, class: "form-control"%>
