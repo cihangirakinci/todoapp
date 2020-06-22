@@ -8,4 +8,8 @@ class ListStatusesController < ApplicationController
 
     redirect_to root_url
   end
+
+  def done
+    @lists = List.all
+  end
 end
